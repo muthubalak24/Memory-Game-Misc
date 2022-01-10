@@ -1,0 +1,77 @@
+﻿   <html>
+   <body>
+	<button onclick=buttondefault("no1")     btnval="4"   id="no1"  >-</button>
+	<button onclick=buttondefault("no2")     btnval="9"   id="no2"  >-</button>
+	<button onclick=buttondefault("no3")     btnval="5"   id="no3"  >-</button>
+	<button onclick=buttondefault("no4")     btnval="7"   id="no4"  >-</button>
+	<button onclick=buttondefault("no5")     btnval="2"   id="no5"  >-</button>
+	<button onclick=buttondefault("no6")     btnval="2"   id="no6"  >-</button><br>
+	<button onclick=buttondefault("no7")     btnval="3"   id="no7"  >-</button>
+	<button onclick=buttondefault("no8")     btnval="5"   id="no8"  >-</button>
+	<button onclick=buttondefault("no9")     btnval="7"   id="no9"  >-</button>
+	<button onclick=buttondefault("no10")    btnval="4"   id="no10" >-</button>
+	<button onclick=buttondefault("no11")    btnval="8"   id="no11" >-</button>
+	<button onclick=buttondefault("no12")    btnval="1"   id="no12" >-</button><br>
+	<button onclick=buttondefault("no13")    btnval="8"   id="no13" >-</button>
+	<button onclick=buttondefault("no14")    btnval="1"   id="no14" >-</button>
+	<button onclick=buttondefault("no15")    btnval="6"   id="no15" >-</button>
+	<button onclick=buttondefault("no16")    btnval="9"   id="no16" >-</button>
+	<button onclick=buttondefault("no17")    btnval="3"   id="no17" >-</button>
+	<button onclick=buttondefault("no18")    btnval="6"   id="no18" >-</button><br>
+	 
+	<p>HIGH SCORE:</p><p id ="scoreis">0</p>
+
+	<p id="demo"></p>
+	<script>
+	   var count=0;
+	   var first=0;
+	   var second=0;
+	   var idfirst=0;
+	  
+	   	function buttondefault(fixedvalue) 
+			{
+			  count=count+1;
+			  if(count%2==1){
+			  let text="";
+			  for(let i=1; i<19 ;i++){
+			       text= "no"+i;
+			   if(document.getElementById(text).disabled!=true){
+			       document.getElementById(text).innerHTML="-";
+				//alert(i); 
+			    }else{  
+				//alert(text);
+			    }
+		          }
+			  }
+			  if(count%2==1){
+				first=parseInt(document.getElementById(fixedvalue).getAttribute("btnval"));	
+				idfirst=fixedvalue;
+			  }
+			  if(count%2==0){
+				second=parseInt(document.getElementById(fixedvalue).getAttribute("btnval"));
+
+			  }
+			  if(count%2==0){
+				var total=first+second;
+			        if(total%2==1){
+					//alert("number is odd");
+					document.getElementById(fixedvalue).disabled=true;
+					document.getElementById(idfirst).disabled=true;
+					var r=parseInt(document.getElementById("scoreis").innerHTML);
+					document.getElementById("scoreis").innerHTML=r+1;
+			  }else{
+				//alert("number is not odd")
+			  }
+
+			  }
+
+			  var x=document.getElementById(fixedvalue).getAttribute("btnval");
+			  document.getElementById(fixedvalue).innerHTML=x;
+
+
+
+		          }
+        </script>
+	
+	</body>
+	</html>

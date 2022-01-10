@@ -1,0 +1,120 @@
+﻿   <head>
+   <body>
+	
+	<button onclick="buttons('bone')"     val="2"  id="bone">-</button>
+	<button onclick="buttons('btwo')"     val="9"  id="btwo">-</button>
+	<button onclick="buttons('bthree')"   val="4"  id="bthree">-</button>
+	<button onclick="buttons('bfour')"    val="7"  id="bfour">-</button>
+	<button onclick="buttons('bfive')"    val="1"  id="bfive">-</button>
+	<button onclick="buttons('bsix')"     val="5"  id="bsix">-</button><br>
+	<button onclick="buttons('bseven')"   val="6"  id="bseven">-</button>
+	<button onclick="buttons('beight')"   val="8"  id="beight">-</button>
+	<button onclick="buttons('bnine')"    val="1"  id="bnine">-</button>
+	<button onclick="buttons('bten')"     val="2"  id="bten">-</button>
+	<button onclick="buttons('beleven')"  val="9"  id="beleven">-</button>
+	<button onclick="buttons('btwelve')"  val="5"  id="btwelve">-</button><br>
+	<button onclick="buttons('bthirdtn')" val="7"  id="bthirdtn">-</button>
+	<button onclick="buttons('bfourtn')"  val="8"  id="bfourtn">-</button>
+	<button onclick="buttons('bfiftn')"   val="3"  id="bfiftn">-</button>
+	<button onclick="buttons('bsixtn')"   val="4"  id="bsixtn">-</button>
+	<button onclick="buttons('bseventn')" val="3"  id="bseventn">-</button>
+	<button onclick="buttons('beightn')"  val="6"  id="beightn">-</button><br>
+	<p>score:</p> <p id=scoreidentifier >0</p>
+
+        <p id="demo"></p>
+ 	<script>
+	      var z=0;
+	      var first=0;
+	      var second=0;
+	      var third=0;
+	      var idfirst=0;
+	      var idsecond=0;
+	   function buttons(idvalue)
+	      {
+		z=z+1;
+		if(z%3==1){
+		      document.getElementById("bone").innerHTML="-";
+		      document.getElementById("btwo").innerHTML="-";
+		      document.getElementById("bthree").innerHTML="-";
+		      document.getElementById("bfour").innerHTML="-";
+		      document.getElementById("bfive").innerHTML="-";
+		      document.getElementById("bsix").innerHTML="-";
+		      document.getElementById("bseven").innerHTML="-";
+		      document.getElementById("beight").innerHTML="-";
+		      document.getElementById("bnine").innerHTML="-";
+		      document.getElementById("bten").innerHTML="-";
+		      document.getElementById("beleven").innerHTML="-";
+		      document.getElementById("btwelve").innerHTML="-";
+		      document.getElementById("bthirdtn").innerHTML="-";
+		      document.getElementById("bfourtn").innerHTML="-";
+		      document.getElementById("bfiftn").innerHTML="-";
+		      document.getElementById("bsixtn").innerHTML="-";
+		      document.getElementById("bseventn").innerHTML="-";
+		      document.getElementById("beightn").innerHTML="-";
+		      
+
+		}
+		if((z%3)==1){
+			first=parseInt(document.getElementById(idvalue).getAttribute("val"));
+			idfirst=idvalue;
+		}
+                if((z%3)==2){
+			second=parseInt(document.getElementById(idvalue).getAttribute("val"));
+			idsecond=idvalue;
+		}
+		
+
+		if((z%3)==0){
+			third=parseInt(document.getElementById(idvalue).getAttribute("val"));
+		}
+
+		if((z%3)==0){
+			var ans=first+second+third;
+			if(ans==14){
+				alert("14 came");
+				document.getElementById(idvalue).disabled=true;
+				document.getElementById(idfirst).disabled=true;	               
+				document.getElementById(idsecond).disabled=true;
+				var score=parseInt(document.getElementById("scoreidentifier").innerHTML);
+			        document.getElementById("scoreidentifier").innerHTML=score+1
+				alert(score+1);
+			}else{
+				alert("14 not came");
+			}
+		}
+		
+		//alert((z%3)+" clicked");
+
+		var x=document.getElementById(idvalue).getAttribute("val");
+		document.getElementById(idvalue).innerHTML=x;
+
+		
+		}
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
